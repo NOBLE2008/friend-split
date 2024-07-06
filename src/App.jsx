@@ -9,7 +9,11 @@ function App() {
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendCon friends={friends} />
+        <FriendCon
+          friends={friends}
+          selectedFriends={selectedFriends}
+          setSelectedFriends={setSelectedFriends}
+        />
       </div>
     </div>
   );
