@@ -4,6 +4,7 @@ import FriendCon from "./components/FriendCon";
 
 function App() {
   const [friends, setFriends] = useState([]);
+  const [selectedFriends, setSelectedFriends] = useState(null);
 
   return (
     <div className="app">
