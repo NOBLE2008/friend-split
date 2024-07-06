@@ -1,12 +1,18 @@
-import React from 'react'
-import Friend from './Friend'
+import React from "react";
+import Friend from "./Friend";
 
-const FriendCon = ({friends}) => {
+const FriendCon = ({ friends, selectedFriends, setSelectedFriends }) => {
   return (
-        <ul>
-            {friends.map(item => <Friend item={item}/>)}
-        </ul>
-  )
-}
+    <ul>
+      {friends.map((item) => (
+        <Friend
+          item={item}
+          selectedFriends={selectedFriends}
+          setSelectedFriends={setSelectedFriends}
+        />
+      ))}
+    </ul>
+  );
+};
 
-export default FriendCon
+export default FriendCon;

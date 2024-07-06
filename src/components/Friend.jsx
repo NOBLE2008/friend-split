@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-const Friend = () => {
-  return (
-    
-  )
-}
+const Friend = ({ item, selectedFriends, setSelectedFriends }) => {
+  return <li>
+    <img src="/download.jpeg" alt="" />
+  </li>;
+};
 
-export default Friend
+export default Friend;
