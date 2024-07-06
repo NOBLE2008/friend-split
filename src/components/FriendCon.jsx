@@ -1,10 +1,11 @@
 import React from 'react'
+import Friend from './Friend'
 
-const FriendCon = () => {
+const FriendCon = ({friends}) => {
   return (
-    <div className="sidebar">
-        
-    </div>
+        <ul>
+            {friends.map(item => <Friend item={item}/>)}
+        </ul>
   )
 }
 
