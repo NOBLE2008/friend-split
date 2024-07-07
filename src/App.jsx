@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import FriendCon from "./components/FriendCon";
+import FormAddFriend from "./components/FormAddFriend";
 
 function App() {
   const [friends, setFriends] = useState([]);
@@ -13,6 +14,9 @@ function App() {
           friends={friends}
           selectedFriends={selectedFriends}
           setSelectedFriends={setSelectedFriends}
+        />
+        <FormAddFriend
+          onAddFriend={setFriends}
         />
       </div>
     </div>
