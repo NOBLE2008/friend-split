@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const Friend = ({ item, selectedFriends, setSelectedFriends }) => {
   return (
@@ -16,6 +17,9 @@ const Friend = ({ item, selectedFriends, setSelectedFriends }) => {
           {item.name} owes you £{item.friend}
         </p>
       )}
+      <Button>
+        {item.id === selectedFriends.id ? 'Close' : 'Select'}
+      </Button>
     </li>
   );
 };
