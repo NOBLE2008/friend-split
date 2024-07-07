@@ -8,6 +8,7 @@ const FormAddFriend = ({ onAddFriend }) => {
     friend: 0,
     owe: "none",
   });
+  
   const handleChange = (e) => {
     // Add friend logic here
     setNewFriend((cur) => {
