@@ -6,6 +6,8 @@ const FormUpdateFriend = ({selectedFriends}) => {
       <h2>Split a bill with {selectedFriends.name}</h2>
       <label htmlFor="value">💰 Bill Value</label>
       <input type="text" id="value" />
+      <label htmlFor="your-expense">🧍‍♀️ Your expense</label>
+      <input type="text" id="your-expense" />
     </form>
   )
 }
