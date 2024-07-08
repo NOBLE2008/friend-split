@@ -8,8 +8,10 @@ const FormUpdateFriend = ({selectedFriends}) => {
       <input type="text" id="value" />
       <label htmlFor="your-expense">🧍‍♀️ Your expense</label>
       <input type="text" id="your-expense" />
-      <label htmlFor="friend-expense">{selectedFriends.name}'s </label>
+      <label htmlFor="friend-expense">👫 {selectedFriends.name}'s </label>
       <input type="text" id="friend-expense" />
+      <label htmlFor="who-pays">🤑 Who is paying</label>
+      <input type="text" id="who-pays" />
     </form>
   )
 }
