@@ -11,7 +11,10 @@ const FormUpdateFriend = ({selectedFriends}) => {
       <label htmlFor="friend-expense">👫 {selectedFriends.name}'s </label>
       <input type="text" id="friend-expense" />
       <label htmlFor="who-pays">🤑 Who is paying</label>
-      <input type="text" id="who-pays" />
+      <select name="who" id="">
+        <option value="0">You</option>
+        <option value="1">Friend</option>
+      </select>
     </form>
   )
 }
