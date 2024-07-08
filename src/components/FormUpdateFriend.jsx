@@ -1,30 +1,54 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-const FormUpdateFriend = ({selectedFriends, friend}) => {
-  const friendConfirm = friend.find(friend => friend.id === selectedFriends.id)
-  const [formVal, setFormVal] = useState({
-    id: friendConfirm.id,
-    name: friendConfirm.name,
-    me: friendConfirm.me,
-    friend: friendConfirm.friend,
-    owe: friendConfirm.owe,
-  })
-  return (
-    <form action="" className="form-split-bill">
-      <h2>Split a bill with {selectedFriends.name}</h2>
-      <label htmlFor="value">💰 Bill Value</label>
-      <input type="text" id="value" name='total'/>
-      <label htmlFor="your-expense">🧍‍♀️ Your expense</label>
-      <input type="text" id="your-expense" name='me'/>
-      <label htmlFor="friend-expense">👫 {selectedFriends.name}'s </label>
-      <input type="text" id="friend-expense" name='friend'/>
-      <label htmlFor="who-pays">🤑 Who is paying</label>
-      <select name="who" id="">
-        <option value="0">You</option>
-        <option value="1">Friend</option>
-      </select>
-    </form>
-  )
-}
+const FormUpdateFriend = ({ selectedFriends, friend, setSelectedFriends, setFriends }) => {
+  const friendConfirm = friend.find(
+    (friend) => friend.id === selectedFriends.id
+  );
 
-export default FormUpdateFriend
+  if (!friendConfirm) {
+    return <div></div>;
+  } else {
+    const [formVal, setFormVal] = useState({
+      id: friendConfirm.id,
+      me: friendConfirm.me,
+      friend: friendConfirm.friend,
+      who: 'me'
+    });
+
+    const handleChange = (e) => {
+      setFormVal(cur => {
+        return {
+         ...cur,
+          [e.target.name]: e.target.value
+        };
+      })
+    }
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setSelectedFriends((cur) => {
+        return cur.map(())
+      });
+      
+    }
+    return (
+      <form action="" className="form-split-bill">
+        <h2>Split a bill with {selectedFriends.name}</h2>
+        <label htmlFor="value">💰 Bill Value</label>
+        <input type="text" id="value" name="total" value={formVal.me + formVal.friend}/>
+        <label htmlFor="your-expense">🧍‍♀️ Your expense</label>
+        <input type="text" id="your-expense" name="me" value={formVal.me} onChange={handleChange}/>
+        <label htmlFor="friend-expense">👫 {selectedFriends.name}'s </label>
+        <input type="text" id="friend-expense" name="friend" value={(formVal.me + formVal.friend) - formVal.me}/>
+        <label htmlFor="who-pays">🤑 Who is paying</label>
+        <select name="who" id="" value={formVal.who} onChange={handleChange}>
+          <option value="me">You</option>
+          <option value="friend">Friend</option>
+        </select>
+      </form>
+    );
+  }
+
+};
+
+export default FormUpdateFriend;
