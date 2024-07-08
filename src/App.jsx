@@ -23,6 +23,8 @@ function App() {
       <FormUpdateFriend
         selectedFriends={selectedFriends}
         setSelectedFriends={setSelectedFriends}
+        friends={friends}
+        setFriends={setFriends}
       />
     </div>
   );

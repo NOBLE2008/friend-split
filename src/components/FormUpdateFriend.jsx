@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const FormUpdateFriend = ({selectedFriends}) => {
+const FormUpdateFriend = ({selectedFriends, friend}) => {
+  const friendConfirm = friend.find(friend => friend.id === selectedFriends.id)
+  const [formVal, setFormVal] = useState({
+    id: friendConfirm.id,
+    name: friendConfirm.name,
+    me: friendConfirm.me,
+    friend: friendConfirm.friend,
+    owe: friendConfirm.owe,
+  })
   return (
     <form action="" className="form-split-bill">
       <h2>Split a bill with {selectedFriends.name}</h2>
