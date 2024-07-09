@@ -31,7 +31,7 @@ const FormUpdateFriend = ({ selectedFriends, friend, setSelectedFriends, setFrie
           ...cur,
           me: formVal.me,
           friend: formVal.friend,
-          owe: formVal.me == formVal.friend ? 'none': formVal.who == me ? 'friend' : 'you'
+          owe: formVal.me == formVal.friend ? 'none': formVal.who == 'me' ? 'friend' : 'you'
         }
       });
       
