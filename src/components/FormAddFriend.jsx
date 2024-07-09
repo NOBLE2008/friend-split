@@ -6,6 +6,7 @@ const FormAddFriend = ({ onAddFriend }) => {
     name: "",
     me: 0,
     friend: 0,
+    img: '',
     owe: "none",
   });
   
@@ -30,7 +31,7 @@ const FormAddFriend = ({ onAddFriend }) => {
       <label htmlFor="name">👫 Friend Name</label>
       <input type="text" id="name" name="name" onChange={handleChange}/>
       <label htmlFor="image">🌄 Image URL</label>
-      <input type="text" id="image" />
+      <input type="text" id="image" name="img" onChange={handleChange}/>
       <Button>Add</Button>
     </form>
   );

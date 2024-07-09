@@ -19,7 +19,7 @@ const Friend = ({ item, selectedFriends, setSelectedFriends }) => {
   };
   return (
     <li>
-      <img src="/download.jpeg" alt="" />
+      <img src={item.img} alt="" />
       <h3>{item.name}</h3>
       {item.me == item.friend ? (
         <p>You and {item.name} are even</p>
