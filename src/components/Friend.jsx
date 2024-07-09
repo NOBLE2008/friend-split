@@ -21,7 +21,7 @@ const Friend = ({ item, selectedFriends, setSelectedFriends }) => {
       <img src="/download.jpeg" alt="" />
       <h3>{item.name}</h3>
       {item.me == item.friend ? (
-        <p>You and Anthony are even</p>
+        <p>You and {item.name} are even</p>
       ) : item.owe === "you" ? (
         <p className="red">
           You owe {item.name} £{item.me}

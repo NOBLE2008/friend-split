@@ -39,11 +39,11 @@ const FormUpdateFriend = ({ selectedFriends, friends, setSelectedFriends, setFri
       <form action="" className="form-split-bill" onSubmit={handleSubmit}>
         <h2>Split a bill with {selectedFriends.name}</h2>
         <label htmlFor="value">💰 Bill Value</label>
-        <input type="text" id="value" name="total" value={formVal.total} onChange={handleChange}/>
+        <input type="number" id="value" name="total" value={formVal.total} onChange={handleChange}/>
         <label htmlFor="your-expense">🧍‍♀️ Your expense</label>
-        <input type="text" id="your-expense" name="me" value={formVal.me} onChange={handleChange}/>
-        <label htmlFor="friend-expense">👫 {selectedFriends.name}'s </label>
-        <input type="text" id="friend-expense" name="friend" value={(formVal.total) - formVal.me}/>
+        <input type="number" id="your-expense" name="me" value={formVal.me} onChange={handleChange}/>
+        <label htmlFor="friend-expense">👫 {selectedFriends.name}'s expense </label>
+        <input type="number" id="friend-expense" name="friend" value={(formVal.total) - formVal.me}/>
         <label htmlFor="who-pays">🤑 Who is paying</label>
         <select name="who" id="" value={formVal.who} onChange={handleChange}>
           <option value="me">You</option>
