@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "./Button";
 
 const FormUpdateFriend = ({ selectedFriends, friends, setSelectedFriends, setFriends }) => {
   const friendConfirm = friends.find(
@@ -25,7 +26,7 @@ const FormUpdateFriend = ({ selectedFriends, friends, setSelectedFriends, setFri
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      setSelectedFriends((cur) => {
+      setFriends((cur) => {
         return {
           ...cur,
           me: formVal.me,
@@ -33,6 +34,10 @@ const FormUpdateFriend = ({ selectedFriends, friends, setSelectedFriends, setFri
           owe: formVal.me == formVal.friend ? 'none': formVal.who == 'me' ? 'friend' : 'you'
         }
       });
+
+      setSelectedFriends({
+        id: 1
+      })
       
     }
     return (
@@ -43,12 +48,13 @@ const FormUpdateFriend = ({ selectedFriends, friends, setSelectedFriends, setFri
         <label htmlFor="your-expense">🧍‍♀️ Your expense</label>
         <input type="number" id="your-expense" name="me" value={formVal.me} onChange={handleChange}/>
         <label htmlFor="friend-expense">👫 {selectedFriends.name}'s expense </label>
-        <input type="number" id="friend-expense" name="friend" value={(formVal.total) - formVal.me}/>
+        <input type="number" id="friend-expense" disabled name="friend" value={(formVal.total) - formVal.me}/>
         <label htmlFor="who-pays">🤑 Who is paying</label>
         <select name="who" id="" value={formVal.who} onChange={handleChange}>
           <option value="me">You</option>
           <option value="friend">Friend</option>
         </select>
+        <Button>Split Bill</Button>
       </form>
     );
   }

@@ -12,6 +12,7 @@ const Friend = ({ item, selectedFriends, setSelectedFriends }) => {
       name: item.name,
       id: item.id,
       me: item.me,
+      total: item.total,
       friend: item.friend,
       owe: item.owe,
     });
