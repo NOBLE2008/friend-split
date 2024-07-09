@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-const FormUpdateFriend = ({ selectedFriends, friend, setSelectedFriends, setFriends }) => {
-  const friendConfirm = friend.find(
+const FormUpdateFriend = ({ selectedFriends, friends, setSelectedFriends, setFriends }) => {
+  const friendConfirm = friends.find(
     (friend) => friend.id === selectedFriends.id
   );
-
-  if (!friendConfirm) {
+  if (!friendConfirm || selectedFriends == 1) {
     return <div></div>;
   } else {
     const [formVal, setFormVal] = useState({
@@ -14,7 +13,6 @@ const FormUpdateFriend = ({ selectedFriends, friend, setSelectedFriends, setFrie
       friend: friendConfirm.friend,
       who: 'me'
     });
-
     const handleChange = (e) => {
       setFormVal(cur => {
         return {

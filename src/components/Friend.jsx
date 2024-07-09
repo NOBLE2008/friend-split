@@ -3,7 +3,9 @@ import Button from "./Button";
 
 const Friend = ({ item, selectedFriends, setSelectedFriends }) => {
   const nullOut = () => {
-    setSelectedFriends(null);
+    setSelectedFriends({
+      id: 1
+    });
   };
   const selectField = () => {
     setSelectedFriends({
