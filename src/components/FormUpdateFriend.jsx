@@ -27,7 +27,12 @@ const FormUpdateFriend = ({ selectedFriends, friend, setSelectedFriends, setFrie
     const handleSubmit = (e) => {
       e.preventDefault();
       setSelectedFriends((cur) => {
-        return cur.map(())
+        return {
+          ...cur,
+          me: formVal.me,
+          friend: formVal.friend,
+          owe: formVal.me == formVal.friend ? 'none': formVal.who == me ? 'friend' : 'you'
+        }
       });
       
     }
