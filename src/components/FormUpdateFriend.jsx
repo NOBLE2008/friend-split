@@ -37,7 +37,7 @@ const FormUpdateFriend = ({ selectedFriends, friend, setSelectedFriends, setFrie
       
     }
     return (
-      <form action="" className="form-split-bill">
+      <form action="" className="form-split-bill" onSubmit={handleSubmit}>
         <h2>Split a bill with {selectedFriends.name}</h2>
         <label htmlFor="value">💰 Bill Value</label>
         <input type="text" id="value" name="total" value={formVal.me + formVal.friend}/>
